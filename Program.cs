@@ -1,13 +1,14 @@
 ﻿using System.Text.Json;
-using csharp_projeto03.Modelos; 
+using csharp_projeto03.Modelos;
+using csharp_projeto03.Filtros;
 
 using (HttpClient client = new HttpClient())
 {
     try
     {
         string resposta = await client.GetStringAsync("https://guilhermeonrails.github.io/api-csharp-songs/songs.json"); //puxando os dados
-        var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta); //padrao para receber os dados como um objeto.
-        musicas[0].ExibirDetalhesDaMusica();
+        var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!; //padrao para receber os dados como um objeto.
+        LinqFilter.FiltrarTodosOsGeneros(musicas); //filtro objeto
     }
     catch (Exception ex)
     {
