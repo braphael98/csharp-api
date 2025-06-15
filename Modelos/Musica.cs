@@ -5,9 +5,9 @@ namespace csharp_projeto03.Modelos;
 
 internal class Musica //As vezes é bom traduzir o nome dos dados.
 {
-    [JsonPropertyName("Song")]// Prorpriadade json
+    [JsonPropertyName("song")]// Prorpriadade json
     public string? Nome { get; set; }//Propriedade da classe traduzida do JSON
-    [JsonPropertyName("Artist")]
+    [JsonPropertyName("artist")]
     public string? Artista { get; set; }
     [JsonPropertyName("duration_ms")]
     public int Duracao { get; set; }
