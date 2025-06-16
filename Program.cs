@@ -11,7 +11,8 @@ using (HttpClient client = new HttpClient())
         var musicas = JsonSerializer.Deserialize<List<Musica>>(resposta)!; //padrao para receber os dados como um objeto.
         //LinqFilter.FiltrarTodosOsGeneros(musicas); //filtro objeto
         //LinqOrder.ExibirListaDeArtistasOrdenados(musicas);
-        LinqFilter.FiltrarArtistaPorGenero(musicas, "rock");
+        //LinqFilter.FiltrarArtistaPorGenero(musicas, "rock");
+        LinqFilter.FiltrarMusicasArtista(musicas, "Michel Teló");
     }
     catch (Exception ex)
     {

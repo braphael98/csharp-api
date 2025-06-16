@@ -12,7 +12,7 @@ internal class LinqFilter
             Console.WriteLine($"- {genero}");
         }
     }
-    public static void FiltrarArtistaPorGenero(List<Musica> musicas,string genero)
+    public static void FiltrarArtistaPorGenero(List<Musica> musicas, string genero)
     {
         var artistasPorGenero = musicas.Where(musica => musica.Genero.Contains(
         genero)).Select(musica => musica.Artista).Distinct().ToList();
@@ -22,4 +22,16 @@ internal class LinqFilter
             Console.WriteLine($"- {artista}");
         }
     }
+    public static void FiltrarMusicasArtista(List<Musica> musicas, string nomeArtista)
+    {
+        var musicasDoArtista = musicas.Where(musica => musica.Artista!.Equals(
+        nomeArtista)).ToList();
+        Console.WriteLine(nomeArtista);
+        foreach (var musica in musicasDoArtista)
+        {
+            Console.WriteLine($"- {musica.Nome}");
+        }
+    }
+
+
 }
