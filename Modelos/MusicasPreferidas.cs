@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace csharp_projeto03.Modelos;
 
@@ -28,6 +29,18 @@ internal class MusicasPreferidas
             Console.WriteLine($"{musica.Nome} de {musica.Artista}");
             Console.WriteLine();
         }
+    }
+    public void GerarArquivoJson()// cria um arquivo com objeto anonimo.
+    {
+        string json = JsonSerializer.Serialize(new
+        {
+            nome = Nome,
+            musicas = ListaMusicasFavoritas
+        });
+        string nomeDoArquivo = $"Musicas-Favoritas-{Nome}.json";
+        
+        File.WriteAllText(nomeDoArquivo, json);//Gerador do arquivo
+        Console.WriteLine("Arquivo JSON criado com sucesso !");
     }
 }
 
