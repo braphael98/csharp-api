@@ -32,6 +32,17 @@ internal class LinqFilter
             Console.WriteLine($"- {musica.Nome}");
         }
     }
+    public static void FiltrarMusicasPorAno(List<Musica> musicas,string ano)
+    {
+        var musicasPorAno = musicas.Where(musica => musica.Ano == ano)
+            .OrderBy(musicas => musicas.Nome).Select(musicas => musicas.Nome)
+            .Distinct().ToList();
+        Console.WriteLine($"Musicas do ano {ano}");
+        foreach(var musica in musicasPorAno)
+        {
+            Console.WriteLine($"-{musica}");
+        }
+    }
 
 
 }

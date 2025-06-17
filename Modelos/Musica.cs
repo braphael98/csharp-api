@@ -14,6 +14,8 @@ internal class Musica //As vezes é bom traduzir o nome dos dados.
     [JsonPropertyName("genre")]
     public string? Genero { get; set; }
 
+    [JsonPropertyName("year")]
+    public string Ano {  get; set; }
     public void ExibirDetalhesDaMusica()
     {
         Console.WriteLine($"Artista: {Artista}");
