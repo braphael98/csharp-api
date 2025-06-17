@@ -8,7 +8,7 @@ namespace csharp_projeto03.Modelos;
 
 internal class MusicasPreferidas
 {
-    public string? Nome { get; set; }
+    public string? Nome { get; set; } //nome da pessoa
     public List<Musica> ListaMusicasFavoritas;
 
     public MusicasPreferidas(string nome)
@@ -26,6 +26,7 @@ internal class MusicasPreferidas
         foreach (var musica in ListaMusicasFavoritas)
         {
             Console.WriteLine($"{musica.Nome} de {musica.Artista}");
+            Console.WriteLine();
         }
     }
 }
